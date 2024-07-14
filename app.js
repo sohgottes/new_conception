@@ -13,7 +13,7 @@ const Image = require('./models/Image');
 const app = express();
 
 // Conectando ao MongoDB
-mongoose.connect('mongodb://localhost:3000/myTshirtShop', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/myTshirtShop', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB conectado...'))
     .catch(err => console.log(err));
 
