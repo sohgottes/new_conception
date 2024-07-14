@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Camiseta - Bela Rosa Ateliarte</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Criação de Camiseta</a></li>
+                <li><a href="/account">Conta</a></li>
+                <li><a href="/cart">Carrinho</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Criação de Camiseta</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Enviar Imagem</button>
+        </form>
+        <% if (msg) { %>
+            <p><%= msg %></p>
+        <% } %>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Bela Rosa Ateliarte</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Criação de Camiseta</a></li>
+                <li><a href="/account">Conta</a></li>
+                <li><a href="/cart">Carrinho</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Registro</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="fullName" placeholder="Nome Completo" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="address" placeholder="Endereço" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <input type="password" name="password2" placeholder="Confirme a Senha" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

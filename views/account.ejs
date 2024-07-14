@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Bela Rosa Ateliarte</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Criação de Camiseta</a></li>
+                <li><a href="/account">Conta</a></li>
+                <li><a href="/cart">Carrinho</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Minha Conta</h1>
+        <p>Nome: <%= user.fullName %></p>
+        <p>CPF: <%= user.cpf %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Endereço: <%= user.address %></p>
+        <a href="/logout">Logout</a>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Aprovação de Imagens</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Criação de Camiseta</a></li>
+                <li><a href="/account">Conta</a></li>
+                <li><a href="/cart">Carrinho</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Aprovação de Imagens</h1>
+        <% if (images.length > 0) { %>
+            <% images.forEach(image => { %>
+                <div>
+                    <img src="/uploads/<%= image.filename %>" alt="Imagem enviada" width="200">
+                    <p>Status: <%= image.status %></p>
+                    <form action="/admin/approve/<%= image._id %>" method="POST" style="display:inline;">
+                        <button type="submit">Aprovar</button>
+                    </form>
+                    <form action="/admin/reject/<%= image._id %>" method="POST" style="display:inline;">
+                        <button type="submit">Rejeitar</button>
+                    </form>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>Nenhuma imagem pendente para aprovação</p>
+        <% } %>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

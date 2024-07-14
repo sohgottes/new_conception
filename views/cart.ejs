@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Bela Rosa Ateliarte</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Criação de Camiseta</a></li>
+                <li><a href="/account">Conta</a></li>
+                <li><a href="/cart">Carrinho</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Meu Carrinho</h1>
+        <ul id="cart-items">
+            <% if (cart && cart.length > 0) { %>
+                <% cart.forEach(item => { %>
+                    <li>
+                        <div><%= item.name %></div>
+                        <div>Quantidade: <%= item.quantity %></div>
+                        <div>Preço: R$ <%= item.price %></div>
+                    </li>
+                <% }) %>
+            <% } else { %>
+                <li>Carrinho vazio</li>
+            <% } %>
+        </ul>
+        <form action="/checkout" method="POST">
+            <h2>Formas de Pagamento</h2>
+            <select name="paymentMethod" required>
+                <option value="credit">Cartão de Crédito</option>
+                <option value="debit">Cartão de Débito</option>
+                <option value="pix">PIX</option>
+                <option value="boleto">Boleto</option>
+            </select>
+            <button type="submit">Finalizar Compra</button>
+        </form>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
